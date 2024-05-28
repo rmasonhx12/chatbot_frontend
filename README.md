@@ -8,7 +8,16 @@ This is a React frontend project designed to interact with a Django backend. Thi
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
   - [Cloning the Repository](#cloning-the-repository)
-- [monorepo/.github/workflows/frontend.yml](#monorepogithubworkflowsfrontendyml)
+- [Backend](#backend)
+- [Frontend](#frontend)
+- [django-backend/Dockerfile](#django-backenddockerfile)
+- [django-backend/docker-compose.yml](#django-backenddocker-composeyml)
+- [react-frontend/Dockerfile](#react-frontenddockerfile)
+- [react-frontend/docker-compose.yml](#react-frontenddocker-composeyml)
+- [monorepo/docker-compose.yml](#monorepodocker-composeyml)
+- [monorepo/.github/workflows/backend.yml](#monorepogithubworkflowsbackendyml)
+- [monorepo/.gitlab-ci.yml](#monorepogitlab-ciyml)
+- [monorepo/.circleci/config.yml](#monorepocircleciconfigyml)
 
 ## Getting Started
 
@@ -60,7 +69,7 @@ docker build -t my-react-frontend .
 ```
 Run the Docker container:
 
-```
+
 bash
 ```
 docker run -p 3000:3000 my-react-frontend 
