@@ -8,7 +8,8 @@ This is a React frontend project designed to interact with a Django backend. Thi
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
   - [Cloning the Repository](#cloning-the-repository)
-- [monorepo/.github/workflows/frontend.yml](#monorepogithubworkflowsfrontendyml)
+- [monorepo/.gitlab-ci.yml](#monorepogitlab-ciyml)
+- [monorepo/.circleci/config.yml](#monorepocircleciconfigyml)
 
 ## Getting Started
 
@@ -431,7 +432,7 @@ jobs:
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           docker push mydockerhubusername/mybackend:latest
 
-          ```
+```
 GitHub Actions for Frontend
 
 yaml
