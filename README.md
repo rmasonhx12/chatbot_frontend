@@ -8,8 +8,6 @@ This is a React frontend project designed to interact with a Django backend. Thi
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
   - [Cloning the Repository](#cloning-the-repository)
-- [monorepo/.gitlab-ci.yml](#monorepogitlab-ciyml)
-- [monorepo/.circleci/config.yml](#monorepocircleciconfigyml)
 
 ## Getting Started
 
@@ -475,7 +473,7 @@ jobs:
         env:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          ```
+```
 GitLab CI
 GitLab CI for Backend
 
