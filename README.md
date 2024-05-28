@@ -194,9 +194,10 @@ echo "node_modules/" >> .gitignore
 echo "build/" >> .gitignore
 git add .
 git commit -m "Initial React project setup"
+```
 Set Up Docker for Each Project
 Django Backend Docker Setup
-```
+
 
 dockerfile
 ```
