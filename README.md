@@ -44,8 +44,8 @@ Development
 After cloning the repository, install the dependencies using pnpm:
 
 ```bash
-Copy code
-pnpm install ```
+pnpm install 
+```
 To start the development server, run:
 
 ```bash
