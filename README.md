@@ -8,16 +8,7 @@ This is a React frontend project designed to interact with a Django backend. Thi
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
   - [Cloning the Repository](#cloning-the-repository)
-- [Backend](#backend)
-- [Frontend](#frontend)
-- [django-backend/Dockerfile](#django-backenddockerfile)
-- [django-backend/docker-compose.yml](#django-backenddocker-composeyml)
-- [react-frontend/Dockerfile](#react-frontenddockerfile)
-- [react-frontend/docker-compose.yml](#react-frontenddocker-composeyml)
-- [monorepo/docker-compose.yml](#monorepodocker-composeyml)
-- [monorepo/.github/workflows/backend.yml](#monorepogithubworkflowsbackendyml)
-- [monorepo/.gitlab-ci.yml](#monorepogitlab-ciyml)
-- [monorepo/.circleci/config.yml](#monorepocircleciconfigyml)
+- [monorepo/.github/workflows/frontend.yml](#monorepogithubworkflowsfrontendyml)
 
 ## Getting Started
 
@@ -32,8 +23,8 @@ To get started with this project, you will need to have the following installed 
 
 You can clone this repository using degit, which allows you to quickly copy the repository without including the Git history.
 
-```
 bash
+```
 npx degit git@github.com:rmasonhx12/chatbot_frontend.git my-react-frontend
 cd my-react-frontend 
 ```
@@ -43,13 +34,14 @@ cd my-react-frontend
 Development
 After cloning the repository, install the dependencies using pnpm:
 
-```bash
+bash
+```
 pnpm install 
 ```
 To start the development server, run:
 
-```bash
-Copy code
+bash
+```
 pnpm start 
 ```
 This will start the React development server, and you can view the application by navigating to http://localhost:3000 in your web browser.
@@ -62,16 +54,15 @@ To build and run the project using Docker, follow these steps:
 
 Build the Docker image:
 
-```
 bash
-Copy code
+```
 docker build -t my-react-frontend . 
 ```
 Run the Docker container:
 
 ```
 bash
-Copy code
+```
 docker run -p 3000:3000 my-react-frontend 
 ```
 This will start the React application inside a Docker container, and you can view it by navigating to http://localhost:3000.
@@ -80,9 +71,9 @@ Using Docker Compose
 Docker Compose allows you to define and run multi-container Docker applications. To build and run the project using Docker Compose, follow these steps:
 
 Build and start the containers:
-```
+
 bash
-Copy code
+```
 docker-compose up --build
 ```
 This will start the React application, and you can view it by navigating to http://localhost:3000.
@@ -92,16 +83,16 @@ To build a monorepo that includes both your React frontend and Django backend, f
 
 Create the Monorepo Structure
 Create a new directory for the monorepo:
-```
+
 bash
-Copy code
+```
 mkdir monorepo
 cd monorepo
 ```
 Clone the frontend and backend repositories into the monorepo:
-```
+
 bash
-Copy code
+```
 npx degit git@github.com:rmasonhx12/chatbot_frontend.git react-frontend
 npx degit username/django-backend django-backend
 ```
@@ -109,9 +100,9 @@ Replace username/react-frontend and username/django-backend with the actual path
 
 Set Up Docker Compose for the Monorepo
 Create a docker-compose.yml file in the monorepo root:
-```
+
 yaml
-Copy code
+```
 version: '3.8'
 
 services:
@@ -134,9 +125,9 @@ services:
       ```
 Initialize Git for the Monorepo
 Initialize a new git repository and make the initial commit:
-```
+
 bash
-Copy code
+```
 git init
 git add .
 git commit -m "Initial commit for monorepo"
@@ -150,20 +141,21 @@ Deploying to Vercel
 Vercel is a platform for deploying static sites and serverless functions. To deploy this React application to Vercel, follow these steps:
 
 Install the Vercel CLI:
-```
 bash
-Copy code
+```
 npm install -g vercel
 ```
 Login to Vercel:
-```
+
 bash
-Copy code
+```
 vercel login
+
+```
 Deploy the application:
 
 bash
-Copy code
+```
 vercel
 ```
 Follow the prompts to complete the deployment. Once deployed, Vercel will provide you with a URL where your application is live.
@@ -176,9 +168,9 @@ Set Up Initial Projects
 Initialize Separate Git Repositories
 
 First, initialize separate Git repositories for your Django backend and React frontend.
-```
+
 bash
-Copy code
+```
 # Backend
 mkdir django-backend
 cd django-backend
@@ -204,9 +196,9 @@ git commit -m "Initial React project setup"
 Set Up Docker for Each Project
 Django Backend Docker Setup
 ```
-```
+
 dockerfile
-Copy code
+```
 # django-backend/Dockerfile
 FROM python:3.8-slim-buster
 
@@ -234,9 +226,8 @@ services:
       - DEBUG=1
   ```
 React Frontend Docker Setup
-```
 dockerfile
-Copy code
+```
 # react-frontend/Dockerfile
 FROM node:14
 
@@ -271,9 +262,9 @@ services:
   ```
 Create Monorepo Structure
 Create Monorepo Structure
-```
+
 bash
-Copy code
+```
 mkdir monorepo
 cd monorepo
 npx degit git@github.com:rmasonhx12/chatbot_frontend.git react-frontend
@@ -281,9 +272,9 @@ npx degit username/django-backend django-backend
 git init
 ```
 Monorepo Docker Compose Setup
-```
+
 yaml
-Copy code
+```
 # monorepo/docker-compose.yml
 version: '3.8'
 
@@ -308,9 +299,9 @@ services:
 Set Up CI/CD
 Jenkins CI
 Jenkinsfile for Backend
-```
+
 groovy
-Copy code
+```
 // monorepo/django-backend/Jenkinsfile
 pipeline {
     agent any
@@ -345,9 +336,9 @@ pipeline {
 
 ```
 Jenkinsfile for Frontend
-```
+
 groovy
-Copy code
+```
 // monorepo/react-frontend/Jenkinsfile
 pipeline {
     agent any
@@ -381,9 +372,9 @@ pipeline {
 ```
 GitHub Actions
 GitHub Actions for Backend
-```
+
 yaml
-Copy code
+```
 # monorepo/.github/workflows/backend.yml
 name: Backend CI
 
@@ -440,9 +431,9 @@ jobs:
 
           ```
 GitHub Actions for Frontend
-```
+
 yaml
-Copy code
+```
 # monorepo/.github/workflows/frontend.yml
 name: Frontend CI
 
@@ -484,9 +475,9 @@ jobs:
           ```
 GitLab CI
 GitLab CI for Backend
-```
+
 yaml
-Copy code
+```
 # monorepo/.gitlab-ci.yml
 stages:
   - build
@@ -511,9 +502,9 @@ push_backend:
     - docker push $CI_REGISTRY_IMAGE/mybackend:latest
   ```
 GitLab CI for Frontend
-```
+
 yaml
-Copy code
+```
 build_frontend:
   stage: build
   script:
@@ -528,9 +519,9 @@ deploy_frontend:
     - vercel --prod --token=$VERCEL_TOKEN
 CircleCI
 CircleCI for Backend
-
+```
 yaml
-Copy code
+```
 # monorepo/.circleci/config.yml
 version: 2.1
 
@@ -561,9 +552,8 @@ workflows:
       - build
 ```
 CircleCI for Frontend
-```
 yaml
-Copy code
+```
 jobs:
   build:
     docker:
@@ -589,9 +579,9 @@ jobs:
 Final Steps
 Add and Commit Changes
 Add and Commit Changes
-```
+
 bash
-Copy code
+```
 git add .
 git commit -m "Setup monorepo with Docker and CI/CD"
 git remote add origin your-monorepo-url
