@@ -598,9 +598,7 @@ If you wish to contribute to this project, please fork the repository and submit
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
-```
-css
-Copy code
+
+
 
 This markdown provides a complete and detailed guide for setting up, developing, and deploying your project, along with building a monorepo and configuring CI/CD pipelines.
-```
