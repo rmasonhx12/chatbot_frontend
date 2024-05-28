@@ -575,8 +575,7 @@ jobs:
       - run:
           name: Deploy to Vercel
           command: vercel --prod --token=$VERCEL_TOKEN
-
-          ```
+```
 Final Steps
 Add and Commit Changes
 Add and Commit Changes
