@@ -8,16 +8,7 @@ This is a React frontend project designed to interact with a Django backend. Thi
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
   - [Cloning the Repository](#cloning-the-repository)
-- [Backend](#backend)
-- [Frontend](#frontend)
-- [django-backend/Dockerfile](#django-backenddockerfile)
-- [django-backend/docker-compose.yml](#django-backenddocker-composeyml)
-- [react-frontend/Dockerfile](#react-frontenddockerfile)
-- [react-frontend/docker-compose.yml](#react-frontenddocker-composeyml)
-- [monorepo/docker-compose.yml](#monorepodocker-composeyml)
-- [monorepo/.github/workflows/backend.yml](#monorepogithubworkflowsbackendyml)
-- [monorepo/.gitlab-ci.yml](#monorepogitlab-ciyml)
-- [monorepo/.circleci/config.yml](#monorepocircleciconfigyml)
+- [monorepo/.github/workflows/frontend.yml](#monorepogithubworkflowsfrontendyml)
 
 ## Getting Started
 
@@ -131,7 +122,8 @@ services:
       - ./react-frontend:/app
     environment:
       - CHOKIDAR_USEPOLLING=true
-      ```
+
+```
 Initialize Git for the Monorepo
 Initialize a new git repository and make the initial commit:
 
